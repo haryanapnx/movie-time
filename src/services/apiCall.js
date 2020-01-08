@@ -21,7 +21,7 @@ export const apiCall = ({ method, url, data = "" }) => async dispatch => {
   try {
     const response = await axios({
       method: method,
-      url: cors + URL + url,
+      url: URL + url,
       data: data.data || "",
       headers: head || "",
       params: data.params || "",

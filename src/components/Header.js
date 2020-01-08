@@ -1,29 +1,60 @@
 import React, { Component } from "react";
-import { Navbar, Nav, InputGroup,Button, FormControl } from "react-bootstrap";
+import {
+  Nav,
+  InputGroup,
+  Button,
+  FormControl,
+  Row,
+  Col,
+  Form,
+  NavDropdown
+} from "react-bootstrap";
+import { FaSearch } from "react-icons/fa";
 
 export default class Header extends Component {
   render() {
     return (
-      <>
-        <Navbar bg="primary" variant="dark">
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <InputGroup className="mb-3">
-            <FormControl
-              placeholder="Recipient's username"
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-            />
+      <div className="bg-nav p-3 shadow">
+        <Row>
+          <Col md="2">
+            <h2 style={{color:'white'}}>
+              Movie <span style={{ color: "yellow" }}>Time</span>
+            </h2>
+          </Col>
+          <Col md="6">
+            <InputGroup className="ml-2">
+            <FormControl aria-describedby="basic-addon2" />
             <InputGroup.Append>
-              <Button variant="outline-secondary">Button</Button>
+              <Button style={color} variant="light">
+                <FaSearch color="grey" />
+              </Button>
             </InputGroup.Append>
           </InputGroup>
-        </Navbar>
-      </>
+          </Col>
+          <Col md="4">
+            <Nav className="ml-auto">
+              <NavDropdown title="Category" id="nav-dropdown">
+                <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item eventKey="4.3">
+                  Something else here
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item eventKey="4.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link style={{color:'#fff'}} href="#home">Login</Nav.Link>
+              <Button variant="outline-light">Get Started</Button>
+            </Nav>
+          </Col>
+        </Row>
+        {/* </Navbar> */}
+      </div>
     );
   }
 }
+
+const color ={backgroundColor:'#fff'}
