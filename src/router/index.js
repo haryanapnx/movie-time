@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, withRouter, Route } from "react-router-dom";
-import { MoviesDetail, MoviesContainer } from "Features";
+import { MoviesDetail, MoviesContainer } from "../Features";
 
 class IndexRouter extends Component {
   render() {

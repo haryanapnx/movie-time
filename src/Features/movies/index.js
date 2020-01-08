@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Header from "components/Header";
+import Header from "../../components/Header";
 import Movies from "./movies";
-import NowPlaying from "components/NowPlaying";
-import MovieNews from "components/MovieNews";
-import UserReviews from "components/UserReviews";
+import NowPlaying from "../../components/NowPlaying";
+import MovieNews from "../../components/MovieNews";
+import UserReviews from "../../components/UserReviews";
 import { connect } from "react-redux";
-import { getMovies, searchMovies } from "redux/actions/movieAction";
-import PartnersStudio from "components/PartnersStudio";
-import Footers from "components/Footer";
-import Loader from "components/Loader";
+import { getMovies, searchMovies } from "../../redux/actions/movieAction";
+import PartnersStudio from "../../components/PartnersStudio";
+import Footers from "../../components/Footer";
+import Loader from "../../components/Loader";
 
 class MoviesContainer extends Component {
   componentDidMount() {

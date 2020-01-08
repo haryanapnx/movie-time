@@ -1,5 +1,5 @@
 import * as constants from "../constants";
-import { apiCall } from "services/apiCall";
+import { apiCall } from "../../services/apiCall";
 
 export function setLoading(bool) {
   return {
