@@ -5,35 +5,42 @@ import NowPlaying from "components/NowPlaying";
 import MovieNews from "components/MovieNews";
 import UserReviews from "components/UserReviews";
 import { connect } from "react-redux";
-import {getMovies} from 'redux/actions/movieAction'
-import PartnersStudio from "../../components/PartnersStudio";
-import Footers from "../../components/Footer";
+import { getMovies, searchMovies } from "redux/actions/movieAction";
+import PartnersStudio from "components/PartnersStudio";
+import Footers from "components/Footer";
+import Loader from "components/Loader";
 
 class MoviesContainer extends Component {
-    componentDidMount(){
-        this.props.dispatch(getMovies())
-    }
+  componentDidMount() {
+    this.props.dispatch(getMovies());
+  }
+  handleSearch = async q => {
+    await  this.props.dispatch(searchMovies(q));
+  };
   render() {
-      console.log(this.props.movies_list);
-      
     return (
       <>
-        <Header />
+        {this.props.isLoading && <Loader />}
+        <Header
+          searchMovies={this.handleSearch}
+          movies_list_search={this.props.movies_list_search}
+        />
         <NowPlaying movies_list={this.props.movies_list} />
         <MovieNews />
         <UserReviews />
         <PartnersStudio />
         <Movies />
-        <Footers/>
+        <Footers />
       </>
     );
   }
 }
 const mapStateToProps = state => {
-  const { movies_list, isLoading } = state.movies;
+  const { movies_list, movies_list_search, isLoading } = state.movies;
   return {
     movies_list,
-    isLoading
+    isLoading,
+    movies_list_search
   };
 };
 const mapDispatchToProps = dispatch => ({ dispatch });

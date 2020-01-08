@@ -28,3 +28,23 @@ export const getMovies = () => async dispatch => {
   }
   //some function
 };
+export const searchMovies = (query) => async dispatch => {
+  dispatch(setLoading(true));
+  const res = await dispatch(
+    apiCall({
+      method: "get",
+      url: `/search/movie?api_key=e851c47c40552466a1a415867974f98a&query=${query}`
+    })
+  );
+  if (res) {
+    const { results } = res.data;
+    dispatch(setLoading(false));
+    return dispatch({
+      type: constants.MOVIES_SET,
+      payload: results
+    });
+  } else {
+    dispatch(setLoading(false));
+  }
+  //some function
+};

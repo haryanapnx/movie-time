@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { Card, CardDeck, Row, Col, Container } from "react-bootstrap";
+import { Card, Row, Col, Container } from "react-bootstrap";
 import { FaStar } from "react-icons/fa";
 
 export default class MovieNews extends Component {
@@ -38,7 +36,7 @@ export default class MovieNews extends Component {
                   </Col>
                 </Row>
                 <div align="right" className="m-3">
-                  <a href="#">
+                  <a href="!#">
                     <h6>Read More</h6>
                   </a>
                 </div>
@@ -47,7 +45,7 @@ export default class MovieNews extends Component {
           ))}
         </Row>
         <div align="right" className="m-3">
-          <a style={{color:'grey'}} href="#">
+          <a style={{color:'grey'}} href="!#">
             <h5>See All</h5>
           </a>
         </div>
