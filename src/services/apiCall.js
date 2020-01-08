@@ -1,12 +1,11 @@
 import axios from "axios";
 import { URL } from "./config";
-import { isEmpty } from "./helper";
+import { isEmpty } from "commons/helper";
 
 const cors = "https://cors-anywhere.herokuapp.com/";
 
 let contentType = {
   "Content-Type": "application/json"
-  // "X-Requested-With": "XMLHttpRequest"
 };
 
 const defaultHeader = val => {
@@ -27,7 +26,6 @@ export const apiCall = ({ method, url, data = "" }) => async dispatch => {
       headers: head || "",
       params: data.params || "",
       timeout: data.timeout || 0
-      // withCredentials: true
     });
     return response;
   } catch (error) {
