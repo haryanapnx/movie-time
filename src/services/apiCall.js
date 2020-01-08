@@ -1,8 +1,8 @@
 import axios from "axios";
-import { URL } from "./config";
+// import { URL } from "./config";
 import { isEmpty } from "commons/helper";
 
-const cors = "https://cors-anywhere.herokuapp.com/";
+const URL = "https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3";
 
 let contentType = {
   "Content-Type": "application/json"
