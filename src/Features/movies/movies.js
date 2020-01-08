@@ -4,7 +4,7 @@ export default class movies extends Component {
     render() {
         return (
             <div>
-                movie
+                {/* movie */}
             </div>
         )
     }
