@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Switch, withRouter, Route } from "react-router-dom";
-import { MovieDetail, Home } from "features";
+import { MoviesDetail, Movies } from "Features";
 
 class IndexRouter extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/movie-detail" exact component={MovieDetail} />
-        <Route path="/home" exact component={Home} />
+        <Route path="/movie-detail/:slug" exact component={MoviesDetail} />
+        <Route path="/" exact component={Movies} />
       </Switch>
     );
   }

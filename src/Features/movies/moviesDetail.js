@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Movies extends Component {
+export default class movies extends Component {
     render() {
         return (
             <div>
-                
+                movie detail
             </div>
         )
     }
